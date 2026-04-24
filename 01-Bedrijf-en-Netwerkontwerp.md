@@ -6,10 +6,9 @@
 
 ## 1.1 Bedrijfsprofiel
 
-**Naam:** 
-**Core business:** 
-**Aantal medewerkers (ca.):** 
-**Publieke diensten:** 
+**Naam:** KTN  
+**Core business:** IT-dienstverlening  
+**Publieke diensten:** Website (HTTP/HTTPS), Remote access via VPN  
 
 ---
 
