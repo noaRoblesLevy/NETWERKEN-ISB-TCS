@@ -8,6 +8,8 @@
 
 ---
 
+> Nieuw hier? Start met [[00-Uitleg]] — uitleg over de vault, het schema en alle elementen.
+
 ## Secties
 
 | # | Sectie | Status |
