@@ -1,165 +1,165 @@
-<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+<mxGraphModel background="#1e1e2e" dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="1">
   <root>
     <mxCell id="0" />
     <mxCell id="1" parent="0" />
 
     <!-- ═══ ZONE ACHTERGRONDEN ═══ -->
-    <mxCell id="z1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=30;verticalAlign=top;fontSize=13;fontStyle=1;pointerEvents=0;" vertex="1" parent="1">
-      <mxGeometry x="260" y="20" width="360" height="140" as="geometry" />
+    <mxCell id="z1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2a4a;strokeColor=#4a9edd;strokeWidth=2;opacity=80;pointerEvents=0;" vertex="1" parent="1">
+      <mxGeometry x="250" y="20" width="380" height="140" as="geometry" />
     </mxCell>
-    <mxCell id="z1l" value="WAN / Internet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontSize=13;fontStyle=1;fontColor=#0066CC;" vertex="1" parent="1">
-      <mxGeometry x="260" y="22" width="360" height="20" as="geometry" />
-    </mxCell>
-
-    <mxCell id="z2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;opacity=40;verticalAlign=top;fontSize=13;fontStyle=1;pointerEvents=0;" vertex="1" parent="1">
-      <mxGeometry x="20" y="300" width="480" height="290" as="geometry" />
-    </mxCell>
-    <mxCell id="z2l" value="DMZ — 172.16.1.0/24" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontSize=13;fontStyle=1;fontColor=#b46504;" vertex="1" parent="1">
-      <mxGeometry x="20" y="302" width="480" height="20" as="geometry" />
+    <mxCell id="z1l" value="WAN / Internet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#4a9edd;" vertex="1" parent="1">
+      <mxGeometry x="250" y="24" width="380" height="20" as="geometry" />
     </mxCell>
 
-    <mxCell id="z3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=40;verticalAlign=top;fontSize=13;fontStyle=1;pointerEvents=0;" vertex="1" parent="1">
-      <mxGeometry x="530" y="300" width="440" height="290" as="geometry" />
+    <mxCell id="z2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2d1e00;strokeColor=#f0a830;strokeWidth=2;opacity=90;pointerEvents=0;" vertex="1" parent="1">
+      <mxGeometry x="20" y="305" width="480" height="300" as="geometry" />
     </mxCell>
-    <mxCell id="z3l" value="LAN — 192.168.10.0/24" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontSize=13;fontStyle=1;fontColor=#2a6b2a;" vertex="1" parent="1">
-      <mxGeometry x="530" y="302" width="440" height="20" as="geometry" />
+    <mxCell id="z2l" value="DMZ — 172.16.1.0/24" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#f0a830;" vertex="1" parent="1">
+      <mxGeometry x="20" y="309" width="480" height="20" as="geometry" />
+    </mxCell>
+
+    <mxCell id="z3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a2d1a;strokeColor=#6abf6a;strokeWidth=2;opacity=90;pointerEvents=0;" vertex="1" parent="1">
+      <mxGeometry x="530" y="305" width="450" height="300" as="geometry" />
+    </mxCell>
+    <mxCell id="z3l" value="LAN — 192.168.10.0/24" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#6abf6a;" vertex="1" parent="1">
+      <mxGeometry x="530" y="309" width="450" height="20" as="geometry" />
     </mxCell>
 
     <!-- ═══ INTERNET ═══ -->
-    <mxCell id="inet" value="Internet" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
-      <mxGeometry x="340" y="35" width="200" height="100" as="geometry" />
+    <mxCell id="inet" value="&lt;font color=&quot;#cdd6f4&quot;&gt;&lt;b&gt;Internet&lt;/b&gt;&lt;/font&gt;" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#1a3050;strokeColor=#4a9edd;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="330" y="38" width="220" height="95" as="geometry" />
+    </mxCell>
+
+    <!-- ═══ VPN CLIENT (extern) ═══ -->
+    <mxCell id="vpnclient" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;VPN-client&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;thuis&lt;/font&gt;" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;dashed=0;fillColor=#40a02b;strokeColor=#a6e3a1;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="110" y="42" width="60" height="50" as="geometry" />
     </mxCell>
 
     <!-- ═══ VYOS ROUTERS ═══ -->
-    <mxCell id="vyosA" value="&lt;b&gt;VyOS-A&lt;/b&gt;&lt;br&gt;master&lt;br&gt;&lt;font color=&quot;#666666&quot;&gt;eth0: 203.0.113.1/30&lt;br&gt;eth1: 172.16.1.2/24&lt;br&gt;eth2: 192.168.10.2/24&lt;/font&gt;" style="shape=mxgraph.cisco.firewalls.firewall;html=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;labelBackgroundColor=none;" vertex="1" parent="1">
-      <mxGeometry x="320" y="190" width="80" height="70" as="geometry" />
+    <mxCell id="vyosA" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;VyOS-A&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#89b4fa&quot;&gt;master&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#6c7086&quot;&gt;eth0: 203.0.113.1/30&lt;br&gt;eth1: 172.16.1.2/24&lt;br&gt;eth2: 192.168.10.2/24&lt;/font&gt;" style="shape=mxgraph.cisco.firewalls.firewall;html=1;dashed=0;fillColor=#1e66f5;strokeColor=#89b4fa;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="305" y="185" width="80" height="70" as="geometry" />
     </mxCell>
 
-    <mxCell id="vyosB" value="&lt;b&gt;VyOS-B&lt;/b&gt;&lt;br&gt;backup&lt;br&gt;&lt;font color=&quot;#666666&quot;&gt;eth0: 203.0.113.3/30&lt;br&gt;eth1: 172.16.1.3/24&lt;br&gt;eth2: 192.168.10.3/24&lt;/font&gt;" style="shape=mxgraph.cisco.firewalls.firewall;html=1;dashed=0;fillColor=#AE4132;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;labelBackgroundColor=none;" vertex="1" parent="1">
-      <mxGeometry x="490" y="190" width="80" height="70" as="geometry" />
+    <mxCell id="vyosB" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;VyOS-B&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#f38ba8&quot;&gt;backup&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#6c7086&quot;&gt;eth0: 203.0.113.3/30&lt;br&gt;eth1: 172.16.1.3/24&lt;br&gt;eth2: 192.168.10.3/24&lt;/font&gt;" style="shape=mxgraph.cisco.firewalls.firewall;html=1;dashed=0;fillColor=#e64553;strokeColor=#f38ba8;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="495" y="185" width="80" height="70" as="geometry" />
     </mxCell>
 
-    <!-- VRRP label -->
-    <mxCell id="vrrp" value="⟵ VRRP ⟶" style="text;html=1;strokeColor=#d6b656;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontSize=10;fontStyle=3;rounded=1;arcSize=50;" vertex="1" parent="1">
-      <mxGeometry x="405" y="210" width="80" height="24" as="geometry" />
+    <!-- VRRP heartbeat label -->
+    <mxCell id="vrrplbl" value="&lt;font color=&quot;#f9e2af&quot;&gt;&lt;b&gt;VRRP&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=#f9e2af;fillColor=#3d3000;align=center;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontSize=10;fontStyle=1;rounded=1;arcSize=50;" vertex="1" parent="1">
+      <mxGeometry x="400" y="210" width="80" height="22" as="geometry" />
     </mxCell>
 
-    <!-- VRRP VIPs -->
-    <mxCell id="vip" value="&lt;b&gt;Virtual IPs (VRRP)&lt;/b&gt;&lt;br&gt;GW-WAN: 203.0.113.5/30&lt;br&gt;GW-DMZ: 172.16.1.1/24&lt;br&gt;GW-LAN: 192.168.10.1/24" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;fontSize=10;fontStyle=0;" vertex="1" parent="1">
-      <mxGeometry x="375" y="285" width="200" height="64" as="geometry" />
+    <!-- Virtual IPs box -->
+    <mxCell id="vip" value="&lt;b&gt;&lt;font color=&quot;#f9e2af&quot;&gt;Virtual IPs (VRRP)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;GW-DMZ: 172.16.1.1/24&lt;br&gt;GW-LAN: 192.168.10.1/24&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3d3000;strokeColor=#f9e2af;strokeWidth=2;align=center;fontSize=10;" vertex="1" parent="1">
+      <mxGeometry x="365" y="285" width="210" height="58" as="geometry" />
     </mxCell>
 
     <!-- ═══ SWITCHES ═══ -->
-    <mxCell id="swdmz" value="SW-DMZ" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="175" y="390" width="70" height="55" as="geometry" />
+    <mxCell id="swdmz" value="&lt;font color=&quot;#cdd6f4&quot;&gt;&lt;b&gt;SW-DMZ&lt;/b&gt;&lt;/font&gt;" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;dashed=0;fillColor=#1e66f5;strokeColor=#89b4fa;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="180" y="400" width="70" height="55" as="geometry" />
     </mxCell>
 
-    <mxCell id="swlan" value="SW-LAN" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="680" y="390" width="70" height="55" as="geometry" />
+    <mxCell id="swlan" value="&lt;font color=&quot;#cdd6f4&quot;&gt;&lt;b&gt;SW-LAN&lt;/b&gt;&lt;/font&gt;" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;dashed=0;fillColor=#1e66f5;strokeColor=#89b4fa;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="700" y="400" width="70" height="55" as="geometry" />
     </mxCell>
 
     <!-- ═══ DMZ SERVERS ═══ -->
-    <mxCell id="web1" value="&lt;b&gt;SRV-WEB1&lt;/b&gt;&lt;br&gt;172.16.1.10&lt;br&gt;Apache (HA node 1)" style="shape=mxgraph.cisco.servers.standard_server;html=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="40" y="480" width="50" height="65" as="geometry" />
+    <mxCell id="web1" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;SRV-WEB1&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;172.16.1.10&lt;br&gt;Apache&lt;/font&gt;" style="shape=mxgraph.cisco.servers.standard_server;html=1;dashed=0;fillColor=#1e66f5;strokeColor=#89b4fa;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="45" y="490" width="50" height="65" as="geometry" />
     </mxCell>
 
-    <mxCell id="web2" value="&lt;b&gt;SRV-WEB2&lt;/b&gt;&lt;br&gt;172.16.1.11&lt;br&gt;Apache (HA node 2)" style="shape=mxgraph.cisco.servers.standard_server;html=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="155" y="480" width="50" height="65" as="geometry" />
+    <mxCell id="web2" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;SRV-WEB2&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;172.16.1.11&lt;br&gt;Apache&lt;/font&gt;" style="shape=mxgraph.cisco.servers.standard_server;html=1;dashed=0;fillColor=#1e66f5;strokeColor=#89b4fa;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="165" y="490" width="50" height="65" as="geometry" />
     </mxCell>
 
-    <mxCell id="vpnsrv" value="&lt;b&gt;SRV-VPN&lt;/b&gt;&lt;br&gt;172.16.1.20&lt;br&gt;OpenVPN" style="shape=mxgraph.cisco.servers.standard_server;html=1;dashed=0;fillColor=#AE4132;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="310" y="480" width="50" height="65" as="geometry" />
+    <mxCell id="vpnsrv" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;SRV-VPN&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;172.16.1.20&lt;br&gt;OpenVPN&lt;/font&gt;" style="shape=mxgraph.cisco.servers.standard_server;html=1;dashed=0;fillColor=#e64553;strokeColor=#f38ba8;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="330" y="490" width="50" height="65" as="geometry" />
     </mxCell>
 
     <!-- HAProxy VIP label -->
-    <mxCell id="havip" value="VIP: 172.16.1.100&lt;br&gt;(HAProxy + Keepalived)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;fontSize=9;" vertex="1" parent="1">
-      <mxGeometry x="55" y="440" width="175" height="30" as="geometry" />
+    <mxCell id="havip" value="&lt;font color=&quot;#f9e2af&quot;&gt;&lt;b&gt;VIP: 172.16.1.100&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;HAProxy + Keepalived&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3d3000;strokeColor=#f9e2af;strokeWidth=1;align=center;fontSize=9;" vertex="1" parent="1">
+      <mxGeometry x="50" y="450" width="175" height="32" as="geometry" />
     </mxCell>
 
     <!-- ═══ LAN DEVICES ═══ -->
-    <mxCell id="dns" value="&lt;b&gt;SRV-DNS/DHCP&lt;/b&gt;&lt;br&gt;192.168.10.10&lt;br&gt;DNS + DHCP" style="shape=mxgraph.cisco.servers.standard_server;html=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="570" y="480" width="50" height="65" as="geometry" />
+    <mxCell id="dns" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;SRV-DNS/DHCP&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;192.168.10.10&lt;/font&gt;" style="shape=mxgraph.cisco.servers.standard_server;html=1;dashed=0;fillColor=#1e66f5;strokeColor=#89b4fa;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="590" y="490" width="50" height="65" as="geometry" />
     </mxCell>
 
-    <mxCell id="pc1" value="&lt;b&gt;PC1&lt;/b&gt;&lt;br&gt;DHCP&lt;br&gt;.100-.200" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="690" y="480" width="60" height="50" as="geometry" />
+    <mxCell id="pc1" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;PC1&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;DHCP&lt;/font&gt;" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;dashed=0;fillColor=#1e66f5;strokeColor=#89b4fa;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="710" y="490" width="60" height="50" as="geometry" />
     </mxCell>
 
-    <mxCell id="pc2" value="&lt;b&gt;PC2&lt;/b&gt;&lt;br&gt;DHCP&lt;br&gt;.100-.200" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="820" y="480" width="60" height="50" as="geometry" />
-    </mxCell>
-
-    <!-- VPN client (extern) -->
-    <mxCell id="vpnclient" value="&lt;b&gt;VPN-client&lt;/b&gt;&lt;br&gt;(thuis)" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;dashed=0;fillColor=#6d8764;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
-      <mxGeometry x="130" y="45" width="60" height="50" as="geometry" />
+    <mxCell id="pc2" value="&lt;b&gt;&lt;font color=&quot;#cdd6f4&quot;&gt;PC2&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#a6adc8&quot;&gt;DHCP&lt;/font&gt;" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;dashed=0;fillColor=#1e66f5;strokeColor=#89b4fa;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;" vertex="1" parent="1">
+      <mxGeometry x="840" y="490" width="60" height="50" as="geometry" />
     </mxCell>
 
     <!-- ═══ VERBINDINGEN ═══ -->
     <!-- Internet → VyOS-A -->
-    <mxCell id="e1" value="eth0" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" source="inet" target="vyosA" parent="1">
+    <mxCell id="e1" value="&lt;font color=&quot;#89b4fa&quot;&gt;203.0.113.0/30&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#89b4fa;strokeWidth=2;fontColor=#89b4fa;fontSize=9;" edge="1" source="inet" target="vyosA" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
     <!-- Internet → VyOS-B -->
-    <mxCell id="e2" value="eth0" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#AE4132;strokeWidth=2;" edge="1" source="inet" target="vyosB" parent="1">
+    <mxCell id="e2" value="&lt;font color=&quot;#f38ba8&quot;&gt;203.0.113.0/30&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#f38ba8;strokeWidth=2;fontColor=#f38ba8;fontSize=9;" edge="1" source="inet" target="vyosB" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
     <!-- VyOS-A → SW-DMZ -->
-    <mxCell id="e3" value="eth1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" source="vyosA" target="swdmz" parent="1">
+    <mxCell id="e3" value="&lt;font color=&quot;#89b4fa&quot;&gt;eth1&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#89b4fa;strokeWidth=2;fontSize=9;" edge="1" source="vyosA" target="swdmz" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
-    <!-- VyOS-B → SW-DMZ -->
-    <mxCell id="e4" value="eth1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#AE4132;strokeWidth=2;dashed=1;" edge="1" source="vyosB" target="swdmz" parent="1">
+    <!-- VyOS-B → SW-DMZ (gestippeld = backup) -->
+    <mxCell id="e4" value="&lt;font color=&quot;#f38ba8&quot;&gt;eth1&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#f38ba8;strokeWidth=2;dashed=1;fontSize=9;" edge="1" source="vyosB" target="swdmz" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
     <!-- VyOS-A → SW-LAN -->
-    <mxCell id="e5" value="eth2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" source="vyosA" target="swlan" parent="1">
+    <mxCell id="e5" value="&lt;font color=&quot;#89b4fa&quot;&gt;eth2&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#89b4fa;strokeWidth=2;fontSize=9;" edge="1" source="vyosA" target="swlan" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
-    <!-- VyOS-B → SW-LAN -->
-    <mxCell id="e6" value="eth2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#AE4132;strokeWidth=2;dashed=1;" edge="1" source="vyosB" target="swlan" parent="1">
+    <!-- VyOS-B → SW-LAN (gestippeld = backup) -->
+    <mxCell id="e6" value="&lt;font color=&quot;#f38ba8&quot;&gt;eth2&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#f38ba8;strokeWidth=2;dashed=1;fontSize=9;" edge="1" source="vyosB" target="swlan" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- VRRP heartbeat tussen routers -->
+    <mxCell id="e14" value="&lt;font color=&quot;#f9e2af&quot;&gt;heartbeat&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#f9e2af;strokeWidth=1;dashed=1;fontSize=9;" edge="1" source="vyosA" target="vyosB" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
     <!-- SW-DMZ → servers -->
-    <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;" edge="1" source="swdmz" target="web1" parent="1">
+    <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#585b70;strokeWidth=1.5;" edge="1" source="swdmz" target="web1" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
-    <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;" edge="1" source="swdmz" target="web2" parent="1">
+    <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#585b70;strokeWidth=1.5;" edge="1" source="swdmz" target="web2" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
-    <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;" edge="1" source="swdmz" target="vpnsrv" parent="1">
+    <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#585b70;strokeWidth=1.5;" edge="1" source="swdmz" target="vpnsrv" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
     <!-- SW-LAN → devices -->
-    <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;" edge="1" source="swlan" target="dns" parent="1">
+    <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#585b70;strokeWidth=1.5;" edge="1" source="swlan" target="dns" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
-    <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;" edge="1" source="swlan" target="pc1" parent="1">
+    <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#585b70;strokeWidth=1.5;" edge="1" source="swlan" target="pc1" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
-    <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;" edge="1" source="swlan" target="pc2" parent="1">
+    <mxCell id="e12" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#585b70;strokeWidth=1.5;" edge="1" source="swlan" target="pc2" parent="1">
       <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
-    <!-- VPN client → Internet (gestippeld) -->
-    <mxCell id="e13" value="VPN tunnel" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6d8764;strokeWidth=2;dashed=1;endArrow=open;endFill=0;" edge="1" source="vpnclient" target="vpnsrv" parent="1">
+    <!-- VPN tunnel (extern → SRV-VPN) -->
+    <mxCell id="e13" value="&lt;font color=&quot;#a6e3a1&quot;&gt;VPN tunnel (UDP 1194)&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#a6e3a1;strokeWidth=2;dashed=1;endArrow=open;endFill=0;fontSize=9;" edge="1" source="vpnclient" target="vpnsrv" parent="1">
       <mxGeometry relative="1" as="geometry">
         <Array as="points">
-          <mxPoint x="160" y="90" />
-          <mxPoint x="335" y="90" />
+          <mxPoint x="140" y="90" />
+          <mxPoint x="355" y="90" />
         </Array>
       </mxGeometry>
-    </mxCell>
-
-    <!-- VyOS-A ↔ VyOS-B heartbeat -->
-    <mxCell id="e14" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;strokeWidth=1;dashed=1;" edge="1" source="vyosA" target="vyosB" parent="1">
-      <mxGeometry relative="1" as="geometry" />
     </mxCell>
 
   </root>
