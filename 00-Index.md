@@ -4,7 +4,8 @@
 **Groepsleden:** Noa Robles Levy | Quinten Morreel  
 **Demo (laatste les):** 21/05  
 **Deadline indiening:** avond voor het examen (P4)  
-**Tools:** GNS3 + VyOS (NIET Packet Tracer voor demo)
+**Tools:** VirtualBox + VyOS + Ubuntu Server (NIET Packet Tracer voor demo)  
+**X-Factor:** IPv6 dual-stack (ULA intern, 2001:db8::/64 WAN)
 
 ---
 
@@ -15,13 +16,13 @@
 | # | Sectie | Status |
 |---|--------|--------|
 | 1 | [[01-Bedrijf-en-Netwerkontwerp]] | ⬜ |
-| 2 | [[02-Adressering]] | ⬜ |
+| 2 | [[02-Adressering]] | 🔄 |
 | 3 | [[03-LAN-Servers-DHCP-DNS]] | ⬜ |
 | 4 | [[04-Firewall]] | ⬜ |
-| 5 | [[05-Router-Redundantie]] | ⬜ |
-| 6 | [[06-Server-Redundantie]] | ⬜ |
-| 7 | [[07-VPN]] | ⬜ |
-| 8 | [[08-X-Factor]] | ⬜ |
+| 5 | [[05-Router-Redundantie]] | 🔄 |
+| 6 | [[06-Server-Redundantie]] | 🔄 |
+| 7 | [[07-VPN]] | 🔄 |
+| 8 | [[08-X-Factor]] | 🔄 |
 | 9 | [[09-Bijlagen]] | ⬜ |
 | 10 | [[10-Timesheet]] | ⬜ |
 | 11 | [[11-Referenties]] | ⬜ |
