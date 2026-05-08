@@ -17,8 +17,8 @@
 |---|--------|--------|
 | 1 | [[01-Bedrijf-en-Netwerkontwerp]] | ⬜ |
 | 2 | [[02-Adressering]] | 🔄 |
-| 3 | [[03-LAN-Servers-DHCP-DNS]] | ⬜ |
-| 4 | [[04-Firewall]] | ⬜ |
+| 3 | [[03-LAN-Servers-DHCP-DNS]] | 🔄 |
+| 4 | [[04-Firewall]] | 🔄 |
 | 5 | [[05-Router-Redundantie]] | 🔄 |
 | 6 | [[06-Server-Redundantie]] | 🔄 |
 | 7 | [[07-VPN]] | 🔄 |
