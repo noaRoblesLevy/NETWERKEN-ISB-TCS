@@ -1,88 +1,141 @@
-# 7. VPN-oplossing
+  # 7. VPN-oplossing
 
-[[00-Index|← Index]]
+  [[00-Index|← Index]]
 
-> **Niet in Packet Tracer** — gebruik VirtualBox + Ubuntu Server  
-> Oplossing voor **meerdere clients** (NIET point-to-point)  
-> Clients moeten een interne server bereiken
+  > **Niet in Packet Tracer** — gebruik VirtualBox + Debian Linux
+  > Oplossing voor **meerdere clients** (NIET point-to-point)
+  > Clients moeten het interne netwerk bereiken via een beveiligde tunnel
 
----
+  ---
 
-## 7.1 Gekozen VPN-technologie
+  ## 7.1 Gekozen VPN-technologie
 
-- [x] **OpenVPN**
+  - [x] **OpenVPN**
 
-**Motivatie:** OpenVPN is battle-tested, ondersteunt meerdere gelijktijdige clients, werkt op UDP/TCP, en heeft clients voor alle OS'en. Bovendien ondersteunt OpenVPN dual-stack: clients krijgen zowel een IPv4 als IPv6 tunnel-adres.
+  **Motivatie:** OpenVPN is battle-tested, ondersteunt meerdere
+  gelijktijdige clients,
+  werkt op UDP/TCP, en heeft clients voor alle besturingssystemen.
+  Authenticatie
+  gebeurt via PKI-certificaten (geen wachtwoorden).
 
----
+  ---
 
-## 7.2 Demo setup
+  ## 7.2 Architectuur
 
-```
-[Externe client VM]
-        |
-   OpenVPN tunnel (UDP 1194)
-        |
-[SRV-VPN: 172.16.10.20 / fd00:ac10:a::20]
-        |
-[Interne server (bv. SRV-WEB1: 172.16.10.10)]
-```
+  De VPN-server (SRV-VPN) staat in de DMZ en is bereikbaar vanaf het
+  internet
+  via poort 1194 UDP. Verbonden clients krijgen een tunnel-IP uit de
+  10.8.0.0/24
+  pool en kunnen zo het interne netwerk bereiken.
 
-| Rol | IPv4 | IPv6 |
-|-----|------|------|
-| SRV-VPN (server) | 172.16.10.20/24 | fd00:ac10:a::20/64 |
-| VPN tunnel pool (clients) IPv4 | 10.8.0.0/24 | — |
-| VPN tunnel pool (clients) IPv6 | — | fd00:8::/64 |
+  [Externe client]
+         |
+    OpenVPN tunnel (UDP 1194)
+         |
+  [SRV-VPN: debian2 — 10.10.0.20]
+         |
+  [Intern netwerk: 10.10.0.0/24]
 
----
+  | Rol | IP |
+  |-----|----|
+  | SRV-VPN (server) | 10.10.0.20/24 |
+  | VPN tunnel pool (clients) | 10.8.0.0/24 |
+  | Client tunnel-IP (voorbeeld) | 10.8.0.6 |
 
-## 7.3 Server-configuratie (`/etc/openvpn/server.conf`)
+  ---
 
-```bash
-port 1194
-proto udp
-dev tun
+  ## 7.3 PKI — Certificaten via Easy-RSA
 
-# Certificaten (gegenereerd met Easy-RSA)
-ca   /etc/openvpn/ca.crt
-cert /etc/openvpn/server.crt
-key  /etc/openvpn/server.key
-dh   /etc/openvpn/dh.pem
+  bash
+  make-cadir ~/openvpn-ca
+  cd ~/openvpn-ca
+  ./easyrsa init-pki
+  ./easyrsa build-ca nopass          # CA aanmaken → Common Name: KTN-CA
+  ./easyrsa gen-req server nopass    # Serversleutel
+  ./easyrsa sign-req server server   # Servercertificaat ondertekenen
+  ./easyrsa gen-dh                   # Diffie-Hellman (2048-bit)
+  ./easyrsa gen-req client1 nopass   # Clientsleutel
+  ./easyrsa sign-req client client1  # Clientcertificaat ondertekenen
 
-# IPv4 tunnel adressen voor clients
-server 10.8.0.0 255.255.255.0
+  ┌─────────────────────────┬───────────────────────────┐
+  │         Bestand         │           Doel            │
+  ├─────────────────────────┼───────────────────────────┤
+  │ pki/ca.crt              │ CA-certificaat            │
+  ├─────────────────────────┼───────────────────────────┤
+  │ pki/issued/server.crt   │ Servercertificaat         │
+  ├─────────────────────────┼───────────────────────────┤
+  │ pki/private/server.key  │ Serversleutel             │
+  ├─────────────────────────┼───────────────────────────┤
+  │ pki/dh.pem              │ Diffie-Hellman parameters │
+  ├─────────────────────────┼───────────────────────────┤
+  │ pki/issued/client1.crt  │ Clientcertificaat         │
+  ├─────────────────────────┼───────────────────────────┤
+  │ pki/private/client1.key │ Clientsleutel             │
+  └─────────────────────────┴───────────────────────────┘
 
-# IPv6 dual-stack tunnel
-server-ipv6 fd00:8::/64
+  ---
+  7.4 Server-configuratie (/etc/openvpn/server.conf)
 
-# Push routes naar clients
-push "route 172.16.10.0 255.255.255.0"         # DMZ bereikbaar
-push "route-ipv6 fd00:ac10:a::/64"             # DMZ via IPv6
+  port 1194
+  proto udp
+  dev tun
+  ca ca.crt
+  cert server.crt
+  key server.key
+  dh dh.pem
+  server 10.8.0.0 255.255.255.0
+  push "route 10.10.0.0 255.255.255.0"
+  keepalive 10 120
+  persist-key
+  persist-tun
+  status /var/log/openvpn-status.log
+  verb 3
 
-keepalive 10 120
-cipher AES-256-GCM
-```
+  Server starten:
+  sudo systemctl start openvpn@server
+  sudo systemctl enable openvpn@server
 
----
+  ---
+  7.5 Client-configuratie (client1-full.ovpn)
 
-## 7.4 Client-instellingen
+  client
+  dev tun
+  proto udp
+  remote 10.10.0.20 1194
+  resolv-retry infinite
+  nobind
+  persist-key
+  persist-tun
+  verb 3
+  <ca>
+  ... (CA certificaat)
+  </ca>
+  <cert>
+  ... (clientcertificaat)
+  </cert>
+  <key>
+  ... (clientsleutel)
+  </key>
 
-**Server-adres:** 172.16.10.20 (of extern IP in productie)  
-**Protocol/poort:** UDP 1194  
-**Authenticatie:** certificaat (PKI via Easy-RSA)  
-**Client-software:**
-- Windows: OpenVPN GUI
-- macOS: Tunnelblick
-- Linux: `openvpn --config client.ovpn`
+  Client-software: OpenVPN GUI (Windows)
 
----
+  ---
+  7.6 Demo resultaten
 
-## 7.5 Demo procedure
+  ┌─────────────────────────────────────┬───────────────────────────────┐
+  │                Test                 │           Resultaat           │
+  ├─────────────────────────────────────┼───────────────────────────────┤
+  │ OpenVPN server status               │ active (running) ✅           │
+  ├─────────────────────────────────────┼───────────────────────────────┤
+  │ Client verbinding (Windows PC)      │ Verbonden, tunnel IP 10.8.0.6 │
+  │                                     │  ✅                           │
+  ├─────────────────────────────────────┼───────────────────────────────┤
+  │ Ping 10.8.0.1 (server tunnel-IP)    │ 0% packet loss ✅             │
+  ├─────────────────────────────────────┼───────────────────────────────┤
+  │ Intern netwerk bereikbaar           │ Via VPN tunnel ✅             │
+  │ (10.10.0.20)                        │                               │
+  ├─────────────────────────────────────┼───────────────────────────────┤
+  │ Ping zonder VPN verbinding          │ Request timed out ✅          │
+  └─────────────────────────────────────┴───────────────────────────────┘
 
-1. Start SRV-VPN, verifieer dat OpenVPN luistert: `ss -ulnp | grep 1194`
-2. Verbind externe client: `openvpn --config client.ovpn`
-3. Verifieer tunnel-IP op client: `ip addr` → moet 10.8.0.x en fd00:8::x tonen
-4. Ping interne server via IPv4: `ping 172.16.10.10`
-5. Ping interne server via IPv6: `ping6 fd00:ac10:a::10`
-6. Open browser: `http://172.16.10.10` én `http://[fd00:ac10:a::10]` → beide werken
-7. Verifieer dat zonder VPN (tunnel down) de interne servers **niet** bereikbaar zijn
+  ---
