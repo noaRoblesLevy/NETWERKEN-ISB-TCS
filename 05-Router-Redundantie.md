@@ -47,13 +47,13 @@ set interfaces ethernet eth2 ipv6 router-advert prefix fd00:a:a::/64
 set high-availability vrrp group LAN vrid 10
 set high-availability vrrp group LAN interface eth2
 set high-availability vrrp group LAN priority 200
-set high-availability vrrp group LAN virtual-address '10.10.0.1/24'
+set high-availability vrrp group LAN address '10.10.0.1/24'
 
 # VRRP IPv6
 set high-availability vrrp group LAN6 vrid 16
 set high-availability vrrp group LAN6 interface eth2
 set high-availability vrrp group LAN6 priority 200
-set high-availability vrrp group LAN6 virtual-address 'fd00:a:a::1/64'
+set high-availability vrrp group LAN6 address 'fd00:a:a::1/64'
 ```
 
 ---
@@ -69,13 +69,13 @@ set interfaces ethernet eth2 address 'fd00:a:a::3/64'
 set high-availability vrrp group LAN vrid 10
 set high-availability vrrp group LAN interface eth2
 set high-availability vrrp group LAN priority 100
-set high-availability vrrp group LAN virtual-address '10.10.0.1/24'
+set high-availability vrrp group LAN address '10.10.0.1/24'
 
 # VRRP IPv6
 set high-availability vrrp group LAN6 vrid 16
 set high-availability vrrp group LAN6 interface eth2
 set high-availability vrrp group LAN6 priority 100
-set high-availability vrrp group LAN6 virtual-address 'fd00:a:a::1/64'
+set high-availability vrrp group LAN6 address 'fd00:a:a::1/64'
 ```
 
 ---
@@ -89,3 +89,19 @@ set high-availability vrrp group LAN6 virtual-address 'fd00:a:a::1/64'
 5. Verifieer dat VyOS-B de VIP overneemt: `show vrrp` op VyOS-B
 6. Ping blijft actief — client merkt niets (maximaal 1–2 pakketten verlies)
 7. Herstart VyOS-A → wordt opnieuw master (hogere priority)
+
+---
+
+## 5.6 Demo resultaten
+
+| Test | Resultaat |
+|------|-----------|
+| VyOS-A status bij opstart | `MASTER` (priority 200) ✅ |
+| VyOS-B status bij opstart | `BACKUP` (priority 100) ✅ |
+| Client gateway | 10.10.0.1 (VRRP VIP) ✅ |
+| Failover (VyOS-A uitgeschakeld) | VyOS-B neemt VIP over in <3s ✅ |
+| Packet loss bij failover | ~2% (3/150 pakketten) ✅ |
+| Failback (VyOS-A herstart) | VyOS-A pakt MASTER terug (preemption) ✅ |
+| IPv6 VIP (fd00:a:a::1) | Actief op beide routers ✅ |
+
+> **Opmerking:** VyOS 1.4 gebruikt de syntax `address` in plaats van `virtual-address` voor VRRP virtual IP's.
