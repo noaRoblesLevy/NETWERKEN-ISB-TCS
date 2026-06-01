@@ -46,7 +46,8 @@
 
   ## 7.3 PKI — Certificaten via Easy-RSA
 
-  bash
+  ```bash
+
   make-cadir ~/openvpn-ca
   cd ~/openvpn-ca
   ./easyrsa init-pki
