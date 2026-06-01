@@ -2,9 +2,9 @@
 
 **Vak:** Netwerken 2 ISB  
 **Groepsleden:** Noa Robles Levy | Quinten Morreel  
-**Demo (laatste les):** 21/05  
-**Deadline indiening:** avond voor het examen (P4)  
-**Tools:** VirtualBox + VyOS + Ubuntu Server (NIET Packet Tracer voor demo)  
+**Deadline indiening:** 09/06/2026 om 20:00  
+**Presentatie:** 10/06/2026 om 10:30 in GR501 (max 5 min, geen demo)  
+**Tools:** VirtualBox + VyOS + Debian/Ubuntu Server (NIET Packet Tracer voor demo)  
 **X-Factor:** IPv6 dual-stack (ULA intern, 2001:db8::/64 WAN)
 
 ---
@@ -23,23 +23,25 @@
 | 6 | [[06-Server-Redundantie]] | 🔄 |
 | 7 | [[07-VPN]] | ✅ |
 | 8 | [[08-X-Factor]] | 🔄 |
-| 9 | [[09-Bijlagen]] | ⬜ |
-| 10 | [[10-Timesheet]] | ⬜ |
-| 11 | [[11-Referenties]] | ⬜ |
+| 9 | [[09-Bijlagen]] | 🔄 |
+| 10 | [[10-Timesheet]] | 🔄 |
+| 11 | [[11-Referenties]] | ✅ |
 
 > Status: ⬜ nog te doen · 🔄 bezig · ✅ klaar
 
 ---
 
-## Demo-checklist (21/05)
+## Demo-checklist
 
-- [ ] Demo redundante router/gateway (GNS3 + VyOS)
-- [ ] Demo redundante servers (GNS3)
-- [ ] Demo VPN-oplossing (client → VPN → interne server)
+- [x] Demo redundante router/gateway (VyOS VRRP) — 08/05
+- [x] Demo redundante servers (HAProxy + Keepalived) — Noa
+- [x] Demo VPN-oplossing (client → OpenVPN → intern netwerk) — 21/05
 
-## Presentatie-checklist (examen P4, max 5 min)
+## Presentatie-checklist (10/06, max 5 min)
 
 - [ ] Bedrijf + core business uitleggen
-- [ ] Globaal netwerkschema tonen (geen IP's of firewallregels in slides — gebruik woorden)
-- [ ] Redundante oplossingen toelichten
-- [ ] X factor toelichten
+- [ ] Globaal netwerkschema tonen
+- [ ] Redundante oplossingen toelichten (VRRP + HAProxy)
+- [ ] VPN-oplossing toelichten
+- [ ] X-Factor toelichten (IPv6 dual-stack)
+- [ ] **PowerPoint maken en uploaden naar repo**
