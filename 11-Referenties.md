@@ -12,7 +12,7 @@
 
 ## VyOS / Router-redundantie
 
-- [VyOS Documentation — VRRP](https://docs.vyos.io/en/latest/configuration/highavailability/vrrp.html) — officiële VyOS 1.4 documentatie over VRRP-configuratie, inclusief syntax voor `address` (virtual IP). Geraadpleegd op 07/05/2026.
+- [VyOS Documentation — VRRP](https://docs.vyos.io/en/latest/configuration) — officiële VyOS 1.4 documentatie over VRRP-configuratie, inclusief syntax voor `address` (virtual IP). Geraadpleegd op 07/05/2026.
 - [RFC 5798 — Virtual Router Redundancy Protocol (VRRP) Version 3](https://datatracker.ietf.org/doc/html/rfc5798) — officiële standaard voor VRRP (IPv4 en IPv6). Geraadpleegd op 07/05/2026.
 - [VyOS Documentation — Interfaces](https://docs.vyos.io/en/latest/configuration/interfaces/ethernet.html) — configuratie van ethernet interfaces in VyOS. Geraadpleegd op 07/05/2026.
 
