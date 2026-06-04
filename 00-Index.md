@@ -3,7 +3,7 @@
 **Vak:** Netwerken 2 ISB  
 **Groepsleden:** Noa Robles Levy | Quinten Morreel  
 **Deadline indiening:** 09/06/2026 om 20:00  
-**Presentatie:** 10/06/2026 om 10:30 in GR501 (max 5 min, geen demo)  
+**Presentatie:** 11/06/2026 om 10:30 in GR501 (max 5 min, geen demo)  
 **Tools:** VirtualBox + VyOS + Debian/Ubuntu Server (NIET Packet Tracer voor demo)  
 **X-Factor:** IPv6 dual-stack (ULA intern, 2001:db8::/64 WAN)
 
@@ -37,7 +37,7 @@
 - [x] Demo redundante servers (HAProxy + Keepalived) — Noa
 - [x] Demo VPN-oplossing (client → OpenVPN → intern netwerk) — 21/05
 
-## Presentatie-checklist (10/06, max 5 min)
+## Presentatie-checklist (11/06, max 5 min)
 
 - [ ] Bedrijf + core business uitleggen
 - [ ] Globaal netwerkschema tonen
