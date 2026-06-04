@@ -93,3 +93,49 @@ set interfaces ethernet eth2 ipv6 router-advert prefix fd00:a:a::/64
 
 ## 8.5 Uitwerking
 
+### Wat is geïmplementeerd
+
+**VRRP IPv6 (demo 1 — volledig getest):**  
+Naast de IPv4 VRRP-groep (vrid 10) is een aparte VRRP-groep voor IPv6 geconfigureerd (vrid 16). Beide routers adverteren hetzelfde VIP:
+
+```vyos
+set high-availability vrrp group LAN6 vrid 16
+set high-availability vrrp group LAN6 interface eth2
+set high-availability vrrp group LAN6 priority 200        # VyOS-A
+set high-availability vrrp group LAN6 address 'fd00:a:a::1/64'
+```
+
+**SLAAC via Router Advertisements:**  
+VyOS-A stuurt Router Advertisements op de LAN-interface. Clients ontvangen het prefix `fd00:a:a::/64` en genereren automatisch hun eigen IPv6-adres (EUI-64 op basis van MAC-adres). Geen DHCPv6 nodig.
+
+**HAProxy dual-stack (demo 2):**  
+HAProxy bindt op zowel `*:80` (IPv4) als `[::]:80` (IPv6). Keepalived beheert het IPv6 VIP `fd00:ac10:a::100/64` naast het IPv4 VIP.
+
+### Wat niet geïmplementeerd is
+
+| Onderdeel | Reden |
+|-----------|-------|
+| DHCPv6 | Niet nodig — SLAAC volstaat voor clients |
+| Echte publieke IPv6 (niet 2001:db8::/32) | VirtualBox-omgeving zonder echte ISP-aansluiting |
+| OpenVPN IPv6-routing door tunnel | Demo uitgesteld — wordt getoond op examen |
+
+### Meerwaarde t.o.v. puur IPv4
+
+- **Toekomstbestendig:** IPv4-adressen zijn uitgeput, dual-stack is de standaard overgang
+- **Geen NAT nodig voor IPv6:** elke host heeft een uniek (ULA) adres — eenvoudigere troubleshooting
+- **VRRP werkt identiek:** VyOS ondersteunt native IPv6 VRRP zonder extra software
+- **SLAAC vereenvoudigt beheer:** geen DHCP-server nodig voor IPv6-adresuitgifte
+
+---
+
+## 8.6 Demo resultaten
+
+| Test | Resultaat |
+|------|-----------|
+| VyOS-A eth2 IPv6 adres | `fd00:a:a::2/64` actief ✅ |
+| VyOS-B eth2 IPv6 adres | `fd00:a:a::3/64` actief ✅ |
+| VRRP VIP IPv6 (LAN) | `fd00:a:a::1/64` actief op master ✅ |
+| VRRP failover IPv6 | VyOS-B neemt IPv6 VIP over bij uitval VyOS-A ✅ |
+| ping6 naar VIP bij failover | Blijft actief, zelfde packet loss als IPv4 (~2%) ✅ |
+| SLAAC client adres | Client ontvangt `fd00:a:a::<EUI-64>/64` automatisch ✅ |
+| HAProxy IPv6 binding | `curl http://[fd00:ac10:a::100]/` werkt ✅ |
