@@ -146,11 +146,3 @@ verb 3
 
 - Netwerkschema: zie `netwerkschema.drawio` in de repository
 - Packet Tracer simulatie: zie `KTN-Netwerk-Architectuur.pkt` in de repository
-
----
-
-## 9.6 Screenshots
-
-- **VRRP failover demo:** VyOS-B neemt MASTER rol over bij uitval VyOS-A, ~2% packet loss gemeten
-- **VPN demo:** Windows PC verbonden via OpenVPN tunnel, ping 10.8.0.1 → 0% packet loss
-- **Server-redundantie demo:** HAProxy herverdeelt verkeer bij uitval van één webserver
