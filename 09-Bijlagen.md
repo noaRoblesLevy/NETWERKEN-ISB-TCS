@@ -142,7 +142,88 @@ verb 3
 
 ---
 
-## 9.5 Netwerkschema en Packet Tracer
+## 9.5 HAProxy configuratie (`/etc/haproxy/haproxy.cfg`)
+
+```haproxy
+global
+    log /dev/log local0
+
+defaults
+    mode http
+    timeout connect 5s
+    timeout client 30s
+    timeout server 30s
+
+frontend web_front
+    bind *:80
+    default_backend web_back
+
+backend web_back
+    balance roundrobin
+    option httpchk GET /
+    server web1 172.16.10.10:8080 check
+    server web2 172.16.10.11:8080 check
+```
+
+---
+
+## 9.6 Keepalived configuratie
+
+### WEB1 — MASTER (`/etc/keepalived/keepalived.conf`)
+
+```
+vrrp_instance WEB_VIP {
+    state MASTER
+    interface enp0s3
+    virtual_router_id 51
+    priority 200
+    advert_int 1
+    virtual_ipaddress {
+        172.16.10.100/24
+    }
+}
+```
+
+### WEB2 — BACKUP
+
+```
+vrrp_instance WEB_VIP {
+    state BACKUP
+    interface enp0s3
+    virtual_router_id 51
+    priority 100
+    advert_int 1
+    virtual_ipaddress {
+        172.16.10.100/24
+    }
+}
+```
+
+---
+
+## 9.7 lsyncd configuratie (`/etc/lsyncd/lsyncd.conf.lua`)
+
+```lua
+settings {
+    logfile = "/var/log/lsyncd.log",
+    statusFile = "/var/log/lsyncd-status.log",
+}
+
+sync {
+    default.rsyncssh,
+    source = "/var/www/html",
+    host = "web2@172.16.10.11",
+    targetdir = "/var/www/html",
+    rsync = {
+        archive = true,
+        compress = true,
+    },
+}
+```
+
+---
+
+## 9.8 Netwerkschema en Packet Tracer
 
 - Netwerkschema: zie `netwerkschema.drawio` in de repository
 - Packet Tracer simulatie: zie `KTN-Netwerk-Architectuur.pkt` in de repository

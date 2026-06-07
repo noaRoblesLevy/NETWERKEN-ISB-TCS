@@ -20,11 +20,11 @@
 | 3 | [[03-LAN-Servers-DHCP-DNS]] | ✅ |
 | 4 | [[04-Firewall]] | ✅ |
 | 5 | [[05-Router-Redundantie]] | ✅ |
-| 6 | [[06-Server-Redundantie]] | 🔄 |
+| 6 | [[06-Server-Redundantie]] | ✅ |
 | 7 | [[07-VPN]] | ✅ |
 | 8 | [[08-X-Factor]] | ✅ |
-| 9 | [[09-Bijlagen]] | 🔄 |
-| 10 | [[10-Timesheet]] | 🔄 |
+| 9 | [[09-Bijlagen]] | ✅ |
+| 10 | [[10-Timesheet]] | ✅ |
 | 11 | [[11-Referenties]] | ✅ |
 
 > Status: ⬜ nog te doen · 🔄 bezig · ✅ klaar
